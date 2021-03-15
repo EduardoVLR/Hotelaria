@@ -7,6 +7,7 @@
 <table class="table table-hover">
   <thead>
     <tr>
+      <th>ID</th>
       <th>Nome</th>
       <th>Endereço</th>
       <th>Número de quartos</th>
@@ -17,6 +18,7 @@
   <tbody>
     <% @hotels.each do |hotel| %>
       <tr>
+        <td><%= hotel.id %></td>
         <td><%= hotel.nome %></td>
         <td><%= hotel.endereco %></td>
         <td><%= hotel.numeroQuartos %></td>
@@ -32,6 +34,6 @@
 
 <%= link_to 'Cadastrar Hotel', new_hotel_path, class:"btn btn-primary" %> -
 
-<%= link_to 'Voltar', home_index_path, class:"btn btn-primary" %> -
+<%= link_to 'Gerar PDF', hotels_path(format: 'pdf'), class:"btn btn-primary"  %> -
 
-<%= link_to 'PDF File', hotels_path(format: 'pdf'), class:"bnt bnt-primary" %>
+<%= link_to 'Voltar', home_index_path, class:"btn btn-primary" %> 

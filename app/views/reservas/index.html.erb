@@ -8,7 +8,7 @@
   <thead>
     <tr>
       <th>Hotel</th>
-      <th>Hóspede</th>
+      <th>ID do Hóspede</th>
       <th>Nº do Quarto</th>
       <th>Data de entrada</th>
       <th>Data de saída</th>
@@ -20,7 +20,7 @@
     <% @reservas.each do |reserva| %>
       <tr>
         <td><%= reserva.hotel.nome %></td>
-        <td><%= reserva.hospede %></td>
+        <td><%= reserva.hospede_id %></td>
         <td><%= reserva.quarto %></td>
         <td><%= reserva.dataEntrada %></td>
         <td><%= reserva.dataSaida %></td>
@@ -36,6 +36,6 @@
 
 <%= link_to 'Cadastrar Reserva', new_reserva_path, class:"btn btn-primary" %> -
 
-<%= link_to 'Voltar', home_index_path, class:"btn btn-primary" %> -
+<%= link_to 'Gerar PDF', reservas_path(format: 'pdf'), class:"btn btn-primary"  %> -
 
-<%= link_to 'PDF File', reservas_path(format: 'pdf'), class:"bnt bnt-primary" %>
+<%= link_to 'Voltar', home_index_path, class:"btn btn-primary" %> 

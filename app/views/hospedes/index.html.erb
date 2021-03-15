@@ -7,6 +7,7 @@
 <table class="table table-hover">
   <thead>
     <tr>
+      <th>ID</th>
       <th>Nome</th>
       <th>Email</th>
       <th>Telefone</th>
@@ -18,6 +19,7 @@
   <tbody>
     <% @hospedes.each do |hospede| %>
       <tr>
+        <td><%= hospede.id %></td>
         <td><%= hospede.nome %></td>
         <td><%= hospede.email %></td>
         <td><%= hospede.telefone %></td>
@@ -32,8 +34,9 @@
 
 <br>
 
+
 <%= link_to 'Cadastrar Hóspede', new_hospede_path, class:"btn btn-primary" %> -
 
-<%= link_to 'Voltar', home_index_path, class:"btn btn-primary" %> -
+<%= link_to 'Gerar PDF', hospedes_path(format: 'pdf'), class:"btn btn-primary"  %> -
 
-<%= link_to 'PDF File', hospedes_path(format: 'pdf'), class:"bnt bnt-primary" %>
+<%= link_to 'Voltar', home_index_path, class:"btn btn-primary" %> 
