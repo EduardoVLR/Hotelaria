@@ -13,19 +13,19 @@
 
   </br>
   <div class="mb-3">
-    <%= form.label :nome %>
+    <%= form.label :nome, 'Nome' %>
     <%= form.text_field :nome, class:"form-control", placeholder:"Hotel" %>
   </div>
 
   </br>
   <div class="mb-3">
-    <%= form.label :endereco %>
+    <%= form.label :endereco, 'Endereço' %>
     <%= form.text_field :endereco, class:"form-control", placeholder:"Rua dos hotéis, 5000" %>
   </div>
 
   </br>
   <div class="mb-3">
-    <%= form.label :numeroQuartos %>
+    <%= form.label :numeroQuartos, 'Número de quartos' %>
     <%= form.number_field :numeroQuartos, class:"form-control", placeholder:"100"  %>
   </div>
 
@@ -34,4 +34,5 @@
   <div class="actions">
     <%= form.submit nil, class:"btn btn-primary" %>
   </div>
+
 <% end %>

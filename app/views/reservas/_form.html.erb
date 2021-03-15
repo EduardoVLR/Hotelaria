@@ -12,31 +12,31 @@
   <% end %>
 
   <div class="mb-3">
-    <%= form.label :hotel %>
+    <%= form.label :hotel, 'Hotel' %>
     <%= form.select("hotel_id", @hotel_options, { include_blank: 'Selecione...'}, class:"form-control" ) %>
   </div>
 
   </br>
   <div class="mb-3">
-    <%= form.label :hospede %>
+    <%= form.label :hospede, 'Hóspede' %>
     <%= form.select("hospede_id", @hospede_options, { include_blank: 'Selecione...'}, class:"form-control" ) %>
   </div>
 
   </br>
   <div class="mb-3">
-    <%= form.label :quarto %>
+    <%= form.label :quarto, 'Quarto' %>
     <%= form.number_field :quarto, class:"form-control", placeholder:"10" %>
   </div>
 
   </br>
   <div class="mb-3">
-    <%= form.label :dataEntrada %>
+    <%= form.label :dataEntrada, 'Data de Entrada' %>
     <%= form.date_select :dataEntrada %>
   </div>
 
   </br>
   <div class="mb-3">
-    <%= form.label :dataSaida %>
+    <%= form.label :dataSaida, 'Data de saída' %>
     <%= form.date_select :dataSaida %>
   </div>
 
