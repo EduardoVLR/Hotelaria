@@ -1,5 +1,5 @@
 class Hospede < ApplicationRecord
-    has_many :reservas
+    has_many :reservas, dependent: :delete_all
 
     validates :nome, presence: true
     validates :nome, uniqueness: true
