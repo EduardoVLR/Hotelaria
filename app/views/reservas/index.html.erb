@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Reservas</h1>
+
+<%= paginate @reservas %>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Hotel</th>
+      <th>Hóspede</th>
+      <th>Nº do Quarto</th>
+      <th>Data de entrada</th>
+      <th>Data de saída</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @reservas.each do |reserva| %>
+      <tr>
+        <td><%= reserva.hotel.nome %></td>
+        <td><%= reserva.hospede %></td>
+        <td><%= reserva.quarto %></td>
+        <td><%= reserva.dataEntrada %></td>
+        <td><%= reserva.dataSaida %></td>
+        <td><%= link_to 'Mostrar', reserva, :class => 'btn btn-default btn-xs' %></td>
+        <td><%= link_to 'Editar', edit_reserva_path(reserva), :class => 'btn btn-default btn-xs' %></td>
+        <td><%= link_to 'Apagar', reserva, method: :delete, data: { confirm: 'Tem certeza?' }, :class => 'btn btn-xs btn-danger' %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Cadastrar Reserva', new_reserva_path, class:"btn btn-primary" %> -
+
+<%= link_to 'Voltar', home_index_path, class:"btn btn-primary" %> -
+
+<%= link_to 'PDF File', reservas_path(format: 'pdf'), class:"bnt bnt-primary" %>

@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+</br>
+<div class="mb-3">
+    <%= label_tag nil,  @hospede.class.human_attribute_name(:nome) %>
+    <%= text_field_tag nil, @hospede.nome, class:"form-control", disabled: true %>
+</div>
+
+</br>
+<div class="mb-3">
+    <%= label_tag nil,  @hospede.class.human_attribute_name(:email) %>
+    <%= text_field_tag nil, @hospede.email, class:"form-control", disabled: true %>
+</div>
+
+</br>
+<div class="mb-3">
+    <%= label_tag nil,  @hospede.class.human_attribute_name(:telefone) %>
+    <%= text_field_tag nil, @hospede.telefone, class:"form-control", disabled: true %>
+</div>
+
+<!--
+<p>
+  <strong>Data de nascimento:</strong>
+  <%= @hospede.data_nascimento %>
+</p>
+-->
+</br>
+<%= link_to 'Editar', edit_hospede_path(@hospede), class:"btn btn-primary" %> -
+<%= link_to 'Voltar', hospedes_path, class:"btn btn-primary" %>

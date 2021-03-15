@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+
+<form>
+
+  <div class="mb-3">
+    <%= label_tag nil, @reserva.class.human_attribute_name(:hotel) %>
+    <%= text_field_tag nil, @reserva.hotel.nome, class:"form-control", disabled: true %>
+  </div>
+
+  </br>
+  <div class="mb-3">
+    <%= label_tag nil, @reserva.class.human_attribute_name(:quarto) %>
+    <%= text_field_tag nil, @reserva.quarto, class:"form-control", disabled: true %>
+  </div>
+
+  </br>
+  <div class="mb-3">
+    <%= label_tag nil,  @reserva.class.human_attribute_name(:dataEntrada) %>
+    <%= text_field_tag nil, @reserva.dataEntrada, class:"form-control", disabled: true %>
+  </div>
+
+  </br>
+  <div class="mb-3">
+    <%= label_tag nil,  @reserva.class.human_attribute_name(:dataSaida) %>
+    <%= text_field_tag nil, @reserva.dataSaida, class:"form-control", disabled: true %>
+  </div>
+
+  </br>
+
+</form>
+
+<%= link_to 'Editar', edit_reserva_path(@reserva), class:"btn btn-primary" %> -
+<%= link_to 'Voltar', reservas_path, class:"btn btn-primary" %>

@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<form>
+
+  <div class="mb-3">
+    <%= label_tag nil, @hotel.class.human_attribute_name(:nome) %>
+    <%= text_field_tag nil, @hotel.nome, class:"form-control", disabled: true %>
+  </div>
+
+  </br>
+  <div class="mb-3">
+    <%= label_tag nil,  @hotel.class.human_attribute_name(:endereco) %>
+    <%= text_field_tag nil, @hotel.endereco, class:"form-control", disabled: true %>
+  </div>
+
+  </br>
+  <div class="mb-3">
+    <%= label_tag nil,  @hotel.class.human_attribute_name(:numeroQuartos) %>
+    <%= text_field_tag nil, @hotel.numeroQuartos, class:"form-control", disabled: true %>
+  </div>
+
+  </br>
+
+</form>
+
+<%= link_to 'Editar', edit_hotel_path(@hotel), class:"btn btn-primary" %> -
+<%= link_to 'Voltar', hotels_path, class:"btn btn-primary" %>

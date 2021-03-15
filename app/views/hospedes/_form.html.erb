@@ -1,0 +1,43 @@
+<%= form_with(model: hospede) do |form| %>
+  <% if hospede.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(hospede.errors.count, "error") %> prohibited this hospede from being saved:</h2>
+
+      <ul>
+        <% hospede.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  </br>
+  <div class="mb-3">
+    <%= form.label :nome %>
+    <%= form.text_field :nome, class:"form-control", placeholder:"Gabriel Eduardo da Silva" %>
+  </div>
+
+  </br>
+  <div class="mb-3">
+    <%= form.label :email %>
+    <%= form.text_field :email, class:"form-control", placeholder:"email@exemplo.com" %>
+  </div>
+
+  </br>
+  <div class="mb-3">
+    <%= form.label :telefone %>
+    <%= form.text_field :telefone, class:"form-control", placeholder:"99999999" %>
+  </div>
+
+  <!--
+  <div class="field">
+    <%= form.label :data_nascimento %>
+    <%= form.date_select :data_nascimento %>
+  </div>
+  -->
+  
+  </br>
+  <div class="actions">
+    <%= form.submit nil, class:"btn btn-primary" %>
+  </div>
+<% end %>

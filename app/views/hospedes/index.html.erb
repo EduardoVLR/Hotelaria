@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Hóspedes</h1>
+
+<%= paginate @hospedes %>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Email</th>
+      <th>Telefone</th>
+      <!--<th>Data de nascimento</th>-->
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @hospedes.each do |hospede| %>
+      <tr>
+        <td><%= hospede.nome %></td>
+        <td><%= hospede.email %></td>
+        <td><%= hospede.telefone %></td>
+        <!--<td><%= hospede.data_nascimento %></td>-->
+        <td><%= link_to 'Mostrar', hospede, :class => 'btn btn-default btn-xs' %></td>
+        <td><%= link_to 'Editar', edit_hospede_path(hospede), :class => 'btn btn-default btn-xs' %></td>
+        <td><%= link_to 'Apagar', hospede, method: :delete, data: { confirm: 'Tem certeza?' }, :class => 'btn btn-xs btn-danger' %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Cadastrar Hóspede', new_hospede_path, class:"btn btn-primary" %> -
+
+<%= link_to 'Voltar', home_index_path, class:"btn btn-primary" %> -
+
+<%= link_to 'PDF File', hospedes_path(format: 'pdf'), class:"bnt bnt-primary" %>

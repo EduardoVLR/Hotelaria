@@ -1,0 +1,39 @@
+<%= form_with(model: hotel) do |form| %>
+  <% if hotel.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(hotel.errors.count, "error") %> prohibited this hotel from being saved:</h2>
+
+      <ul>
+        <% hotel.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  </br>
+  <div class="mb-3">
+    <%= form.label :nome %>
+    <%= form.text_field :nome, class:"form-control", placeholder:"Hotel" %>
+  </div>
+
+  </br>
+  <div class="mb-3">
+    <%= form.label :endereco %>
+    <%= form.text_field :endereco, class:"form-control", placeholder:"Rua dos hotéis, 5000" %>
+  </div>
+
+  </br>
+  <div class="mb-3">
+    <%= form.label :numeroQuartos %>
+    <%= form.number_field :numeroQuartos, class:"form-control", placeholder:"100"  %>
+  </div>
+
+  </br>
+
+  <div class="actions">
+    <%= form.submit nil, class:"btn btn-primary" %>
+  </div>
+<% end %>
+
+</br>
